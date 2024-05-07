@@ -1,0 +1,55 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"name": "open_webui"
+		}
+	],
+	"settings": {
+		"explorer.fileNesting.patterns": {
+			"docker-compose.yaml": "docker-compose.*",
+			"run.sh": "*.sh",
+			"package.json": "package-lock.json, bun.lockb, yarn.lock, .prettier*, .npmrc, .eslint*, Makefile",
+			".gitignore": ".dockerignore, .gitattributes, .env*",
+			"README.md": "*.md, LICENSE, demo.gif",
+			"vite.config.ts": "tsconfig.json, tailwind.config.js, tailwind.json, postcss.config.js, svelte.config.js, i18next-parser.config.ts, cypress.config.ts"
+		},
+		// Bun settings for debugging
+		"bun.runtime": "./node_modules/.bin/bun",
+		"bun.debugTerminal.enabled": true,
+		"bun.debugTerminal.stopOnEntry": false
+	},
+	"extensions": {
+		"recommendations": [
+			"astro-build.astro-vscode",
+			"charliermarsh.ruff",
+			"ms-azuretools.vscode-docker",
+			"ms-python.isort",
+			"esbenp.prettier-vscode",
+			"ms-python.python",
+			"ms-python.debugpy",
+			"svelte.svelte-vscode",
+			"bradlc.vscode-tailwindcss",
+			"shardulm94.trailing-spaces",
+			"stivo.tailwind-fold",
+			"christian-kohler.path-intellisense",
+			"usernamehw.errorlens",
+			"oven.bun-vscode",
+			"ms-vscode.vscode-typescript-next"
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "main.py",
+				"type": "debugpy",
+				"request": "launch",
+				"module": "uvicorn",
+				"cwd": "${workspaceFolder}/backend",
+				"args": ["main:app", "--reload"],
+				"jinja": true
+			}
+		]
+	}
+}
